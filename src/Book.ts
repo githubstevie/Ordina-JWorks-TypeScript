@@ -15,4 +15,9 @@ class Book extends Item {
 
         element.appendChild(article);
     }
+
+    static fromJSON(data:any): Book{
+        return new Book(data.title, new Author(data.author),
+            data.genre, data.description);
+    }
 }
