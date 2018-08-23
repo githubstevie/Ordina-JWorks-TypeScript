@@ -16,4 +16,24 @@ class Library {
         this.items = (<Item[]>this.books).concat(this.movies);
         return this.items;
     }
+
+    addMovie():void{
+        this.items = [];
+        let movie:Movie = new Movie("the Godfather", "drama",
+            "good movie", 45, "TG");
+        this.items.push(movie);
+
+        var articleContainer:HTMLElement = document.getElementById("items");
+        this.items.forEach(article => article.render(articleContainer));
+    }
+
+    addBook():void{
+        this.items = [];
+        let book:Book = new Book("Mijn biografie", new Author("Marc de Bel"),
+            "thriller", "MB");
+        this.items.push(book);
+
+        var articleContainer:HTMLElement = document.getElementById("items");
+        this.items.forEach(article => article.render(articleContainer));
+    }
 }

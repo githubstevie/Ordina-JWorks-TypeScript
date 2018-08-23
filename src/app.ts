@@ -1,6 +1,8 @@
 
 let jsonParser = new JSONParser();
 
+var library = new Library(null, null);
+
 jsonParser.getJSON("items.json", data => {
     let library:Library = Library.fromJSON(data);
 
